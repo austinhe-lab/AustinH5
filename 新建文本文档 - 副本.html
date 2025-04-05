@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5·12国际护士节 - 西安医学院护理与康复学院</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #FFD166;
+            --accent-color: #FF9E7D;
+            --light-color: #FFF4E6;
+            --dark-color: #444;
+            --text-color: #555;
+        }
+      
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+      
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+      
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.1)" d="M30,10 L50,30 L70,10 L90,30 L70,50 L90,70 L70,90 L50,70 L30,90 L10,70 L30,50 L10,30 Z"/></svg>');
+            background-size: 80px;
+            opacity: 0.2;
+        }
+      
+        h1 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+      
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+      
+        .scroll-down {
+            display: block;
+            margin-top: 1rem;
+            color: white;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+            position: relative;
+        }
+      
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+      
+        section {
+            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+      
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+      
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+      
+        .intro-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+      
+        .intro-content p {
+            text-indent: 2em;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+      
+        .intro-box:hover {
+            transform: translateY(-5px);
+        }
+      
+        .gallery {
+            margin: 2rem 0;
+            position: relative;
+        }
+      
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem 0;
+            gap: 1rem;
+        }
+      
+        .gallery-item {
+            flex: 0 0 90%;
+            scroll-snap-align: start;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+      
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+      
+        .gallery-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+      
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+      
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 50px;
+        }
+      
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background: linear-gradient(var(--primary-color), var(--secondary-color));
+        }
+      
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 4px solid white;
+        }
+      
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+      
+        .timeline-item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+      
+        .timeline-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+      
+        .timeline-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+      
+        .timeline-img:hover {
+            transform: scale(1.03);
+        }
+      
+        .timeline-img-main {
+            grid-column: span 2;
+            height: 300px;
+        }
+      
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+      
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+      
+        .modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+      
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+      
+        .info-modal {
+            background-color: white;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            padding: 2rem;
+            overflow-y: auto;
+            position: relative;
+        }
+      
+        .info-modal h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+      
+        .info-modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+      
+        .info-modal-text {
+            margin-top: 1.5rem;
+        }
+      
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+      
+        .heart {
+            color: var(--primary-color);
+            animation: pulse 1.5s infinite;
+        }
+      
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+      
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+          
+            .subtitle {
+                font-size: 1.5rem;
+            }
+          
+            .gallery-item {
+                flex: 0 0 45%;
+            }
+          
+            .intro-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+          
+            .timeline-images {
+                grid-template-columns: repeat(3, 1fr);
+            }
+          
+            .timeline-img-main {
+                grid-column: span 1;
+            }
+          
+            .info-modal {
+                padding: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>512国际护士节</h1>
+        <p class="subtitle">致敬最美的白衣天使</p>
+        <p> 提灯引路·向光而行——白衣踏浪行   一步一星辰</p>
+        <a href="#about" class="scroll-down">↓ 向下滑动 ↓</a>
+    </header>
+  
+    <section id="about">
+        <h2>护士节介绍</h2>
+        <div class="intro-box">
+            <div class="intro-content">
+                <p>  5月12日是国际护士节，是为纪念现代护理学科的创始人弗洛伦斯·南丁格尔于1912年设立的节日。其基本宗旨是倡导、继承和弘扬南丁格尔不畏艰险、甘于奉献、救死扶伤、勇于献身的人道主义精神。</p>
+                <p>  2025年国际护士节主题为：”我们的护士,我们的未来。关爱护士,促进经济发展“，这一主题强调了健康的护理队伍在促进经济发展、改善卫生系统和确保全球取得更好照护成果方面发挥的关键作用。</p>
+    </section>
+  
+    <section id="college">
+        <h2>学院介绍</h2>
+        <div class="intro-grid">
+            <div class="intro-box">
+                    <h3>护理与康复学院概况</h3>
+                     <p>    
+                             西安医学院护理与康复学院专业教育始于1951年，2006年开展护理本科教育。在护理中等专科教育43年期间，被教育部在1980年确定为全国13所重点中专之一，1994年升格为陕西医学高等专科学校，2002年成立护理系，2009年更名为护理学院，2021年5月，学院正式更名为护理与康复学院。
+</p>
+            </div>
+            <div class="intro-box">
+                    <h3>学科建设</h3>
+                    <p>     
+                            学院设有护理学、助产学、康复治疗学等三个本科专业；拥有7个教研室和1个护理学实验中心，实践教学基地包括有15个三级甲等综合性教学医院、1个精神病医院和3个社区服务中心。护理学实验中心为陕西省普通高等学校实验教学示范中心。</p>
+            </div>
+        </div>
+    </section>
+  
+    <section id="gallery">
+        <h2>天使风采</h2>
+        <div class="gallery">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                       <img src="http://hlxy.xiyi.edu.cn/__local/0/E8/39/4FDB572C711E78D09178FC899E1_4E20567A_12145.jpg" alt="护理与康复学院学院学生实践">
+                    <div class="gallery-caption">护理实践教学</div>
+                </div>
+                <div class="gallery-item">
+                     <img src="http://hlxy.xiyi.edu.cn/__local/8/2A/85/1DDCF63EE810C39F5589B54EBCB_802E1FCA_1DDF6.jpg" alt="护理与康复学院学院教师合影">
+                    <div class="gallery-caption">教师团队</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="http://hlxy.xiyi.edu.cn/__local/4/0D/0A/8677CF6DA8CCA403437E8A29C41_9E38DF9C_E76E.jpg?e=.jpg" alt="护理技能操作">
+                    <div class="gallery-caption">技能操作大赛</div>
+                </div>
+                <div class="gallery-item">
+                  <img src="http://hlxy.xiyi.edu.cn/__local/9/D0/0C/701310BD30A5580D36CC40E364D_415F0015_7D435.jpg" alt="护理与康复学院学生获奖照片">
+                    <div class="gallery-caption">获奖时刻</div>
+                </div>
+                <div class="gallery-item">
+                  <img src="https://qinwen.sanqin.com/pic/2024-07/05/10761836_470087d8-b559-425b-acf7-162dd0b51f28copy.png" alt="毕业典礼">
+                    <div class="gallery-caption">学生毕业典礼</div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <section id="history">
+        <h2>往期回顾</h2>
+        <div class="timeline">
+            <!-- 2024年 -->
+        <div class="timeline-item">
+                <div class="timeline-date">2024年护士节</div>
+                <div class="timeline-item-content">
+                    <p>“薪火相传·圆梦启航——白衣乘风起 一寸一芳华”纪念第113个5·12国际护士节护生授帽暨颁奖典礼</p>
+                    <div class="timeline-images">
+                         <img src="https://mmbiz.qpic.cn/mmbiz_jpg/OTpFz03TmwVFOfMSZ0ys34kD4MXmQatXVHzjQfHEXKdNTYz3aQLXyibk73ULlgoyUxegcVgvttFrVjaoY0EbPxg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1.jpg" 
+                             alt="2024年护士节活动1" class="timeline-img timeline-img-main">
+                        <img src="https://mmbiz.qpic.cn/mmbiz_jpg/OTpFz03TmwVFOfMSZ0ys34kD4MXmQatXrW9Nwy8TcUCoHFrPHMS9BzEx3537KvMsfUmdvTty2cafMAYmxaicMtA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1.jpg" 
+                             alt="2024年护士节活动2" class="timeline-img">
+                        <img src="https://mmbiz.qpic.cn/mmbiz_jpg/OTpFz03TmwVFOfMSZ0ys34kD4MXmQatXerYQ6Kn0wNYeiaS2obCJVae7JqVLqppWp4nvKPbxicBLD0BzHQ5KxbWw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1.jpg" 
+                             alt="2024年护士节活动3" class="timeline-img">
+                    </div>
+                </div>
+            </div>
+          
+            <!-- 2023年 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2023年护士节</div>
+                <div class="timeline-item-content">
+                    <p>“薪火相传· 圆梦启航——以青春之名 赴时代之约”纪念第112个5•12国际护士节护生授帽暨颁奖典礼</p>
+                    <div class="timeline-images">
+                        <img src="http://hlxy.xiyi.edu.cn/__local/1/4C/86/C56205E707B93800DAF19290FC0_076794C6_10527.jpg" 
+                             alt="2023年护士节活动1" class="timeline-img timeline-img-main">
+                        <img src="http://hlxy.xiyi.edu.cn/__local/D/97/F6/BA2C4016DC21CE2CDBE9A2EF9FB_40003832_1CCEB.jpg"
+                          alt="2023年护士节活动2" class="timeline-img timeline-img">
+                       <img src="http://hlxy.xiyi.edu.cn/__local/6/E1/58/33D1B8390D84D7743618243C288_33E27E41_51C27.jpg"
+                          alt="2023年护士节活动2" class="timeline-img timeline-img">
+                   </div>
+                </div>
+            </div>
+          
+            <!-- 2022年 -->
+            <div class="timeline-item">
+                <div class="timeline-date">2022年护士节</div>
+                <div class="timeline-item-content">
+                    <p>“薪火相传•圆梦启航 致敬抗疫天使”——纪念第111个5·12国际护士节护生授帽暨颁奖典礼</p>
+                    <div class="timeline-images">
+                        <img src="https://mmbiz.qpic.cn/mmbiz_jpg/3icptLbaGZdMW7RZQWmPh9uGkf4kuUqynbqYMOicNom2lBvlFu2icGAjfVpsBZKBaAwFkzEB5kG3jvNTBScBEMegw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1.jpg" 
+                             alt="2022年护士节活动1" class="timeline-img timeline-img-main">
+                        <img src="https://mmbiz.qpic.cn/mmbiz_jpg/3icptLbaGZdMW7RZQWmPh9uGkf4kuUqynBtyhLaTxRpTGvUfyrWMOGg23F6wYniaQaZibnobBa3MnukSVqQSqQooA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1.jpg"
+                          alt="2022年护士节活动2" class="timeline-img timeline-img">
+                       <img src="https://mmbiz.qpic.cn/mmbiz_jpg/3icptLbaGZdMW7RZQWmPh9uGkf4kuUqynvv2ah8aWEYeWJUl8OeAOsGATySibRQSib9wJOYFglUZ0IQyNofSaJibFw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1.jpg"
+                          alt="2022年护士节活动2" class="timeline-img timeline-img">
